@@ -4,3 +4,4 @@ export function utils(): string {
 
 export * from './fetching';
 export * from './redis-client';
+export * from './jsonRPC';
