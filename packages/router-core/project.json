@@ -1,0 +1,27 @@
+{
+  "name": "router-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/router-core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/router-core",
+        "main": "packages/router-core/src/index.ts",
+        "tsConfig": "packages/router-core/tsconfig.lib.json",
+        "assets": ["packages/router-core/*.md"],
+        "generatePackageJson": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/router-core/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

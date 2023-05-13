@@ -1,0 +1,27 @@
+{
+  "name": "one-inch",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/one-inch/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/one-inch",
+        "main": "packages/one-inch/src/index.ts",
+        "tsConfig": "packages/one-inch/tsconfig.lib.json",
+        "assets": ["packages/one-inch/*.md"],
+        "generatePackageJson": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/one-inch/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

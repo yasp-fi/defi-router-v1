@@ -1,0 +1,27 @@
+{
+  "name": "evm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/evm/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/evm",
+        "main": "packages/evm/src/index.ts",
+        "tsConfig": "packages/evm/tsconfig.lib.json",
+        "assets": ["packages/evm/*.md"],
+        "generatePackageJson": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/evm/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

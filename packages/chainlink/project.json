@@ -1,0 +1,27 @@
+{
+  "name": "chainlink",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/chainlink/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/chainlink",
+        "main": "packages/chainlink/src/index.ts",
+        "tsConfig": "packages/chainlink/tsconfig.lib.json",
+        "assets": ["packages/chainlink/*.md"],
+        "generatePackageJson": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/chainlink/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

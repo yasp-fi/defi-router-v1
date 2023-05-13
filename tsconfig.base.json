@@ -4,17 +4,26 @@
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
+    "resolveJsonModule": true,
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@yasp/chainlink": ["packages/chainlink/src/index.ts"],
+      "@yasp/evm": ["packages/evm/src/index.ts"],
+      "@yasp/one-inch": ["packages/one-inch/src/index.ts"],
+      "@yasp/router-core": ["packages/router-core/src/index.ts"],
+      "@yasp/thegraph-lib": ["packages/thegraph-lib/src/index.ts"],
+      "@yasp/utils": ["packages/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

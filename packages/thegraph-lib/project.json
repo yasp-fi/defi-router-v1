@@ -1,0 +1,27 @@
+{
+  "name": "thegraph-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/thegraph-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/thegraph-lib",
+        "main": "packages/thegraph-lib/src/index.ts",
+        "tsConfig": "packages/thegraph-lib/tsconfig.lib.json",
+        "assets": ["packages/thegraph-lib/*.md"],
+        "generatePackageJson": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/thegraph-lib/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
